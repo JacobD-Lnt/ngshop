@@ -1,0 +1,44 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align: center">
+  <h1>Welcome to {{ title }}!</h1>
+</div>
+
+<a *ngIf="viewFavs == false">
+  <div class="container">
+    <div class="row">
+      <button id="showFavs" class="btn btn-primary" (click)="showFavs()">
+        View Favorites
+      </button>
+    </div>
+  </div>
+
+  <br />
+  <app-dogdescription
+    *ngFor="let dog of dogs"
+    [dogId]="dog.id"
+    [showButton]="true"
+  ></app-dogdescription>
+</a>
+
+<a *ngIf="viewFavs == true">
+  <div class="container">
+    <div class="row">
+      <button id="showAll" class="btn btn-primary" (click)="showAll()">
+        View All
+      </button>
+      <button
+        id="clearFavs"
+        class="btn btn-outline-warning"
+        (click)="clearFavs()"
+      >
+        Clear Favorites
+      </button>
+    </div>
+  </div>
+  <br />
+  <app-dogdescription
+    *ngFor="let dogId of favDogs"
+    [dogId]="dogId"
+    [showButton]="false"
+  ></app-dogdescription>
+</a>

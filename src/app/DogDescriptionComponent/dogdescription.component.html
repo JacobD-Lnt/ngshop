@@ -1,0 +1,38 @@
+<!-- <p>dogdescription works!</p> -->
+
+<a *ngIf="dog != null">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <img src="{{ dog.thumbnail }}" alt="{{ dog.name }}" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="h6">{{ dog.name }}</div>
+        </div>
+        <div class="row">
+          <div>(id: {{ dog.id }})</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <a *ngIf="showButton == true">
+            <div>
+              <button
+                id="addFav"
+                class="btn btn-outline-danger"
+                (click)="addFav()"
+              >
+                ❤️
+              </button>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</a>
+
+<br />
